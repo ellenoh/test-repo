@@ -2,4 +2,6 @@ node_modules/
 client/node_modules/
 client/dist/
 server/bomad.db
+server/bomad.db-shm
+server/bomad.db-wal
 .env
