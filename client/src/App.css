@@ -1,0 +1,533 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  background: #f0f4f8;
+  color: #1e293b;
+  min-height: 100vh;
+}
+
+.app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ── Navbar ───────────────────────────────────────────── */
+
+.navbar {
+  background: #4f46e5;
+  color: white;
+  padding: 0 1.5rem;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.navbar .logo {
+  font-size: 1.25rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.navbar .nav-right {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.navbar .nav-link {
+  color: rgba(255, 255, 255, 0.85);
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: color 0.15s;
+}
+
+.navbar .nav-link:hover,
+.navbar .nav-link.active {
+  color: white;
+}
+
+.navbar button {
+  background: rgba(255, 255, 255, 0.15);
+  color: white;
+  border: none;
+  padding: 0.4rem 0.9rem;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.85rem;
+}
+
+.navbar button:hover {
+  background: rgba(255, 255, 255, 0.25);
+}
+
+/* ── Avatar ───────────────────────────────────────────── */
+
+.avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: 700;
+  font-size: 0.9rem;
+  flex-shrink: 0;
+}
+
+.avatar.large {
+  width: 64px;
+  height: 64px;
+  font-size: 1.5rem;
+}
+
+/* ── Page Layout ──────────────────────────────────────── */
+
+.page {
+  flex: 1;
+  max-width: 900px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 2rem 1.5rem;
+}
+
+.page-header {
+  margin-bottom: 1.5rem;
+}
+
+.page-header h1 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #1e293b;
+}
+
+.page-header p {
+  color: #64748b;
+  margin-top: 0.25rem;
+}
+
+/* ── Card ─────────────────────────────────────────────── */
+
+.card {
+  background: white;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+  margin-bottom: 1rem;
+}
+
+.card h2 {
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+}
+
+.card h3 {
+  font-size: 0.95rem;
+  margin-bottom: 0.75rem;
+}
+
+/* ── Forms ────────────────────────────────────────────── */
+
+.form-group {
+  margin-bottom: 1rem;
+}
+
+.form-group label {
+  display: block;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #475569;
+  margin-bottom: 0.35rem;
+}
+
+.form-group input,
+.form-group select {
+  width: 100%;
+  padding: 0.6rem 0.75rem;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  transition: border-color 0.15s;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+  outline: none;
+  border-color: #4f46e5;
+  box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.1);
+}
+
+/* ── Buttons ──────────────────────────────────────────── */
+
+.btn {
+  padding: 0.6rem 1.2rem;
+  border: none;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.15s, transform 0.1s;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.btn:active {
+  transform: scale(0.98);
+}
+
+.btn-primary {
+  background: #4f46e5;
+  color: white;
+}
+
+.btn-primary:hover {
+  background: #4338ca;
+}
+
+.btn-secondary {
+  background: #e2e8f0;
+  color: #475569;
+}
+
+.btn-secondary:hover {
+  background: #cbd5e1;
+}
+
+.btn-success {
+  background: #059669;
+  color: white;
+}
+
+.btn-success:hover {
+  background: #047857;
+}
+
+.btn-full {
+  width: 100%;
+  justify-content: center;
+}
+
+/* ── Auth Pages ───────────────────────────────────────── */
+
+.auth-page {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 1rem;
+  background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 100%);
+}
+
+.auth-card {
+  background: white;
+  border-radius: 16px;
+  padding: 2.5rem;
+  width: 100%;
+  max-width: 420px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+}
+
+.auth-card h1 {
+  text-align: center;
+  font-size: 1.6rem;
+  margin-bottom: 0.25rem;
+}
+
+.auth-card .subtitle {
+  text-align: center;
+  color: #64748b;
+  margin-bottom: 1.5rem;
+}
+
+.auth-card .toggle {
+  text-align: center;
+  margin-top: 1rem;
+  color: #64748b;
+  font-size: 0.9rem;
+}
+
+.auth-card .toggle a {
+  color: #4f46e5;
+  cursor: pointer;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+/* ── Role Selector ────────────────────────────────────── */
+
+.role-selector {
+  display: flex;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.role-option {
+  flex: 1;
+  padding: 0.75rem;
+  border: 2px solid #e2e8f0;
+  border-radius: 10px;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.15s;
+  background: white;
+}
+
+.role-option:hover {
+  border-color: #a5b4fc;
+}
+
+.role-option.selected {
+  border-color: #4f46e5;
+  background: #eef2ff;
+}
+
+.role-option .role-icon {
+  font-size: 1.5rem;
+  margin-bottom: 0.25rem;
+}
+
+.role-option .role-label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #334155;
+}
+
+/* ── Error / Success ──────────────────────────────────── */
+
+.error-msg {
+  background: #fef2f2;
+  color: #dc2626;
+  padding: 0.6rem 0.75rem;
+  border-radius: 8px;
+  font-size: 0.85rem;
+  margin-bottom: 1rem;
+}
+
+.success-msg {
+  background: #ecfdf5;
+  color: #059669;
+  padding: 0.6rem 0.75rem;
+  border-radius: 8px;
+  font-size: 0.85rem;
+  margin-bottom: 1rem;
+}
+
+/* ── Balance Card ─────────────────────────────────────── */
+
+.balance-card {
+  background: linear-gradient(135deg, #4f46e5, #7c3aed);
+  color: white;
+  border-radius: 16px;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.balance-card .balance-label {
+  font-size: 0.85rem;
+  opacity: 0.8;
+}
+
+.balance-card .balance-amount {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin: 0.25rem 0;
+}
+
+.balance-card .balance-name {
+  font-size: 0.9rem;
+  opacity: 0.85;
+}
+
+/* ── Child Cards (parent view) ────────────────────────── */
+
+.children-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.child-card {
+  background: white;
+  border-radius: 12px;
+  padding: 1.25rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+  cursor: pointer;
+  transition: box-shadow 0.15s, transform 0.15s;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.child-card:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+  transform: translateY(-1px);
+}
+
+.child-card .child-info h3 {
+  font-size: 1rem;
+  margin-bottom: 0.15rem;
+}
+
+.child-card .child-info .child-balance {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #059669;
+}
+
+/* ── Transaction List ─────────────────────────────────── */
+
+.txn-list {
+  list-style: none;
+}
+
+.txn-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.75rem 0;
+  border-bottom: 1px solid #f1f5f9;
+}
+
+.txn-item:last-child {
+  border-bottom: none;
+}
+
+.txn-left .txn-desc {
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.txn-left .txn-meta {
+  font-size: 0.78rem;
+  color: #94a3b8;
+  margin-top: 0.15rem;
+}
+
+.txn-amount {
+  font-weight: 700;
+  font-size: 1rem;
+}
+
+.txn-amount.positive {
+  color: #059669;
+}
+
+.txn-amount.negative {
+  color: #dc2626;
+}
+
+/* ── Link Code ────────────────────────────────────────── */
+
+.link-code-display {
+  font-size: 2rem;
+  font-weight: 700;
+  letter-spacing: 0.3rem;
+  text-align: center;
+  color: #4f46e5;
+  background: #eef2ff;
+  padding: 1rem;
+  border-radius: 12px;
+  margin: 1rem 0;
+}
+
+/* ── Color Picker ─────────────────────────────────────── */
+
+.color-options {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.color-swatch {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  cursor: pointer;
+  border: 3px solid transparent;
+  transition: border-color 0.15s, transform 0.1s;
+}
+
+.color-swatch:hover {
+  transform: scale(1.1);
+}
+
+.color-swatch.selected {
+  border-color: #1e293b;
+}
+
+/* ── Empty State ──────────────────────────────────────── */
+
+.empty-state {
+  text-align: center;
+  padding: 3rem 1rem;
+  color: #94a3b8;
+}
+
+.empty-state .empty-icon {
+  font-size: 3rem;
+  margin-bottom: 0.75rem;
+}
+
+.empty-state p {
+  margin-bottom: 0.5rem;
+}
+
+/* ── Modal ────────────────────────────────────────────── */
+
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+  padding: 1rem;
+}
+
+.modal {
+  background: white;
+  border-radius: 16px;
+  padding: 2rem;
+  width: 100%;
+  max-width: 440px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
+}
+
+.modal h2 {
+  margin-bottom: 1rem;
+}
+
+.modal-actions {
+  display: flex;
+  gap: 0.5rem;
+  justify-content: flex-end;
+  margin-top: 1.5rem;
+}
+
+/* ── Responsive ───────────────────────────────────────── */
+
+@media (max-width: 600px) {
+  .page {
+    padding: 1rem;
+  }
+  .auth-card {
+    padding: 1.5rem;
+  }
+  .balance-card .balance-amount {
+    font-size: 2rem;
+  }
+}
